@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Webpage</title>
+        <link rel="icon" href="w.jpg" type="image">
+        <link rel="stylesheet" href="page.css">
+    </head>
+    <body>
+        <img src="s.jpeg" width="80px" height="80px" id="image" onmouseover="change();" onmouseout="unchange();">
+        <h1 class="heading"><i>HOME PAGE</i></h1>
+        
+            <ul id ="menu">
+                <li><a href="#" onclick="window.location.reload();"><img src="h.png" height="50px" width="50px">Home</a></li>
+                <li><a href="#"><img src="exam.jpg" height="50px" width="50px">Exam</a>
+                    <ul>
+                        <li><a href="Register.html">Register</a></li>
+                        <li><a href="#">Login</a></li>
+                    </ul>
+                <li>
+                    <a><img src="branch.jpg" height="50px" width="50px">Branch</a>
+                    <ul>
+                        <li>
+                            <a href="#">CSE</a>
+                            <ul>
+                                <li><a href="#">Faculty</a>
+                                    <ul>
+                                        <li><a href="Register.html">Register</a></li>
+                                        <li><a href="#">Login</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Students</a>
+                                    <ul>
+                                        <li><a href="Register.html">Register</a></li>
+                                        <li><a href="#">Login</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">ECE</a></li>
+                        <li><a href="#">MECH</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.jpg"><img src="contact.jpg" height="50px" width="50px">Contact</a></li>
+            </ul>
+            <div id="d2">
+                <script>
+                    function validate(){
+                        var fname=/^[a-z,A-Z][a-z,A-Z]*$/;
+                        var fname=document.getElementById("fname");
+                        var lname=/^[a-z,A-Z][a-z,A-Z]*$/;
+                        var lname=document.getElementById("lname");
+                        var password=document.getElementById("pass");
+                        var pn=document.getElementById("ph").value;
+                        var iph=/^[6-9]\d{9}$/
+                        var country=document.getElementById("country");
+                        if(fname.value.trim()=="" || password.value.trim()=="" || lname.value.trim()==""){
+                            alert("Please fill out the form");
+                            return false;
+                        }
+                        else if(fname.value.trim().length<3 || password.value.trim().length<6 ||lname.value.length<3){
+                            alert("Your name or password too short");
+                            return false;
+                        }
+                        else if(iph.test(pn)==false){
+                                alert("Please check your phone number");
+                                return false;
+                        }
+                        else{
+                            return true;
+                        }
+                    }
+                </script>
+                
+                <center>
+                    <table>
+                        <tr>
+                            <td><form action="Details.html" onsubmit="return validate()" id="form">
+                                <h1 id="rh">Registration form</h1>
+                                <b><label>First name:</label></b>
+                                <input type="text" placeholder="Enter first name" id="fname"><br><br>
+                                <b><label>Last name:</label></b>
+                                <input type="text" placeholder="Enter last name" id="lname"><br><br>
+                                <label><b>Email:</b></label>
+                                <input type="email" id="mail" placeholder="Enter mail" required><br><br>
+                                <b><label>Password:</label></b>
+                                <input type="password" placeholder="Enter your password" id="pass"><br><br>
+                                <b><label>Ph Number:</label></b>
+                                <b><input type="text" placeholder="Enter phone number" id="ph"><br><br>
+                                <!-- <h3 style="color:32A80F" id="result" align="center"></h3>  -->
+                                <b><center><button type="submit" id="6">Submit</button></center>
+                            </form></td>
+                        </tr>
+                    </table>
+                </center>
+            </div>
+        <footer id="foot">
+            <p><small>copy right &copy; 2022 #CSE Aspirants</small></p>
+            <div class="footc">
+                ViewCount:
+                <img src="https://hitwebcounter.com/counter/counter.php?page=8003940&style=0001&nbdigits=5&type=page&initCount=100" title="Free Counter" Alt="web counter"   border="0" /></a> 
+            </div>
+            </footer>
+    </body>
+</html>
